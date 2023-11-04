@@ -1,5 +1,21 @@
 <?php
 include 'conexion.php';
+
+// Realiza una consulta para recuperar las canchas desde la base de datos
+$sql = "SELECT * FROM empresa"; // Asegúrate de que el nombre de la tabla coincida con tu base de datos
+
+$result = $conn->query($sql);
+
+// Crea un estilo CSS para los recuadros
+echo '<style>
+    .cancha-box {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px;
+        background-color: #f9f9f9;
+    }
+</style>';
+
 ?>
 
 <!DOCTYPE html>
@@ -46,14 +62,22 @@ include 'conexion.php';
     </ul>
 
     <h1>Canchas Disponibles</h1>
-    <div class="options">
-        <a href="informacion.php" class="option">
-            <img src="img/Logo.jpeg" alt="Logo Empresa" id="logoEmpresa">
-            <p>La Pasión del Futbol</p>
-        </a>
-    </div>
-    
 
+    <?php
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            echo '<div class="cancha-box">';
+            echo '<h2>Nombre de la cancha: ' . $row["Razon_Social"] . '</h2>';
+            echo '<p>Ubicación: ' . $row["Direccion"] . '</p>';
+            echo '<a href="informacion.php?id=' . $row["Id_Empresa"] . '">Ver detalles</a>';
+            echo '</div>';
+        }
+    } else {
+        echo "No se encontraron canchas en la base de datos.";
+    }
+    ?>
+
+    <!-- Otro contenido de tu página -->
 
 </body>
 

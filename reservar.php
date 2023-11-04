@@ -50,31 +50,72 @@ include 'conexion.php';
     <div class="page-container">
         <div class="consulta-window">
             <h1>Consulta Disponibilidad</h1>
+
+
             <div class="form">
                 <div class="icon-label">
-                    <img src="img/ubication.jpg" alt="Canchas Registradas">
+                    <img src="img/ubication.jpg" alt="Empresas Registradas">
                 </div>
-                <select id="canchas">
-                    <option value="cancha1">Cancha 1</option>
-                    <!-- Agrega más opciones según tus necesidades -->
+                <select id="empresas">
+                    <?php
+                    include 'conexion.php';
+
+                    // Realiza una consulta para obtener la lista de empresas
+                    $sql = "SELECT * FROM empresa"; // Asegúrate de que el nombre de la tabla coincida con tu base de datos
+                    
+                    $result = $conn->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            // Muestra las empresas en el menú desplegable
+                            echo '<option value="' . $row["Id_Empresa"] . '">' . $row["Razon_Social"] . '</option>';
+                        }
+                    } else {
+                        echo '<option value="0">No hay empresas disponibles</option>';
+                    }
+                    $conn->close();
+                    ?>
                 </select>
+
+
 
                 <div class="icon-label">
                     <img src="img/tipe.png" alt="Tipo de Cancha">
                 </div>
                 <select id="tipo-cancha">
-                    <option value="futbol 5">Fútbol 5</option>
-                    <!-- Agrega más opciones según tus necesidades -->
+                    <?php
+                    include 'conexion.php';
+
+                    // Realiza una consulta para obtener los tamaños de canchas desde la tabla "detalle_cancha"
+                    $sql = "SELECT DISTINCT Tamaño FROM detalle_cancha"; // Asegúrate de que el nombre de la columna y la tabla coincidan con tu base de datos
+                    
+                    $result = $conn->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            // Muestra los tamaños de canchas en el menú desplegable
+                            echo '<option value="' . $row["Tamaño"] . '">' . $row["Tamaño"] . '</option>';
+                        }
+                    } else {
+                        echo '<option value="No especificado">No hay tamaños de canchas disponibles</option>';
+                    }
+                    $conn->close();
+                    ?>
                 </select>
+
+
+
 
                 <div class="icon-label">
                     <img src="img/calendario.png" alt="Fecha">
                 </div>
-                <input  type="date" id="fr">
+                <input type="date" id="fr">
                 <br>
                 <button id="consultar-button">Consultar</button>
             </div>
         </div>
+
+        
 
         <div class="horario-window">
             <h1>Horario de Reservas</h1>
@@ -166,12 +207,6 @@ include 'conexion.php';
 
         </div>
     </div>
-
-
-
-
-
-
 </body>
 
 </html>
