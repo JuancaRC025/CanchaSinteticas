@@ -1,3 +1,7 @@
+<?php
+include 'conexion.php';
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -28,17 +32,17 @@
     </div>
 
     <ul class="navbar">
-        <li class="nav-item"><a href="index.html">Inicio</a></li>
-        <li class="nav-item"><a href="canchas.html">Canchas</a></li>
+        <li class="nav-item"><a href="index.php">Inicio</a></li>
+        <li class="nav-item"><a href="canchas.php">Canchas</a></li>
         <li class="nav-item"><a href="#">Soporte</a></li>
         <li class="nav-item dropdown">
             <a href="#">Registrar</a>
             <div class="dropdown-content">
-                <a href="reg_usuario.html">Usuario</a>
-                <a href="reg_empresa.html">Empresa</a>
+                <a href="reg_usuario.php">Usuario</a>
+                <a href="reg_empresa.php">Empresa</a>
             </div>
         </li>
-        <li class="nav-item"><a href="ingresar.html">Ingresar</a></li>
+        <li class="nav-item"><a href="ingresar.php">Ingresar</a></li>
     </ul>
 
 
@@ -60,7 +64,7 @@
 
             </div>
         </div>
-        <form id="reservationForm" action="reservar.html" method="get">
+        <form id="reservationForm" action="reservar.php" method="get">
 
             <button type="submit">Reservar</button>
         </form>

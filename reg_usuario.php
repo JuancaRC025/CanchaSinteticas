@@ -1,3 +1,7 @@
+<?php
+include 'conexion.php';
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -28,23 +32,23 @@
     </div>
 
     <ul class="navbar">
-        <li class="nav-item"><a href="index.html">Inicio</a></li>
-        <li class="nav-item"><a href="canchas.html">Canchas</a></li>
+        <li class="nav-item"><a href="index.php">Inicio</a></li>
+        <li class="nav-item"><a href="canchas.php">Canchas</a></li>
         <li class="nav-item"><a href="#">Soporte</a></li>
         <li class="nav-item dropdown">
             <a href="#">Registrar</a>
             <div class="dropdown-content">
-                <a href="reg_usuario.html">Usuario</a>
-                <a href="reg_empresa.html">Empresa</a>
+                <a href="reg_usuario.php">Usuario</a>
+                <a href="reg_empresa.php">Empresa</a>
             </div>
         </li>
-        <li class="nav-item"><a href="#">Ingresar</a></li>
+        <li class="nav-item"><a href="ingresar.php">Ingresar</a></li>
     </ul>
 
 
     <h1> Registrar Usuario</h1>
 
-    <form action="procesar_registro.php" method="post">
+    <form action="registro_us.php" method="post">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required placeholder="Digite su Nombre">
 
@@ -55,20 +59,17 @@
         <input type="email" id="correo" name="correo" required placeholder="Correo electronico">
 
         <label for="telefono">Número de Teléfono:</label>
-        <input type="tel" id="telefono" name="telefono" required placeholder="Telefono">
+        <input type="tel" id="telefono" name="telefono" placeholder="Número de teléfono" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
 
         <label for="contrasena">Contraseña:</label>
-        <input type="password" id="contrasena" name="contrasena" required placeholder="**************">
+        <input type="password" id="contrasena" name="contrasena" required placeholder="************">
+        <button id="toggle-password">Mostrar Contraseña</button>
 
-
-        <input type="password" id="contrasena" name="contrasena" required placeholder="**************">
-        <span id="togglePassword" onclick="togglePasswordVisibility()">Mostrar Contraseña</span>
-    
         <script>
-            function togglePasswordVisibility() {
-                var passwordField = document.getElementById("contrasena");
-                var toggleButton = document.getElementById("togglePassword");
-    
+            const passwordField = document.getElementById("contrasena");
+            const toggleButton = document.getElementById("toggle-password");
+
+            toggleButton.addEventListener("click", function () {
                 if (passwordField.type === "password") {
                     passwordField.type = "text";
                     toggleButton.textContent = "Ocultar Contraseña";
@@ -76,11 +77,8 @@
                     passwordField.type = "password";
                     toggleButton.textContent = "Mostrar Contraseña";
                 }
-            }
+            });
         </script>
-
-
-
 
         <br>
         <button type="submit">Crear mi cuenta</button>

@@ -15,14 +15,14 @@ a.option p {
 }
 
 h1 {
-    font-size: 25px;
+    font-size: 30px;
     text-align: center;
     margin: 0;
     /* Elimina el margen predeterminado de los títulos */
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 25px;
     text-align: center;
     margin: 0;
     /* Elimina el margen predeterminado de los títulos */
@@ -187,14 +187,14 @@ label {
 }
 
 input {
-    border-radius: 20px 40px;
-    width: 40%;
-    padding: 6px;
+    border-radius: 30px 60px;
+    width: 20% !important;
+    padding: 10px;
     margin: 6px 0;
 }
 
 button[type="submit"] {
-    background-color: #007BFF;
+    background-color: #20c000;
     /* Color de fondo */
     color: #fff;
     /* Color del texto */
@@ -209,7 +209,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #0b5a00;
     /* Cambia el color de fondo al pasar el mouse */
     transform: scale(1.1);
     /* Aumenta el tamaño del botón al 120% */
@@ -340,8 +340,13 @@ label {
     margin-bottom: 5px;
 }
 
-select, input {
-    width: 80%;
+select {
+    width: 90%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+#fr {
+    width: 50% !important;
     padding: 5px;
     margin-bottom: 10px;
 }
@@ -367,7 +372,7 @@ button:hover {
 
 
 .horario-window {
-    width: 1000px;
+    width: 1500px;
     padding: 20px;
     background-color: #f0f0f0;
     border: 1px solid #ddd;
@@ -439,6 +444,3 @@ button:hover {
 .reservar-button:hover, .cancelar-button:hover {
     background-color: #0056b3;
 }
-
-
-
