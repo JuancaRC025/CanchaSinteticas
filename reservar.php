@@ -54,9 +54,10 @@ include 'conexion.php';
 
             <div class="form">
                 <div class="icon-label">
-                    <img src="img/ubication.jpg" alt="Empresas Registradas">
+                    Cancha<img src="img/ubication.jpg" alt="Empresas Registradas">
                 </div>
                 <select id="empresas">
+                    <option value=""></option> <!-- Opción en blanco -->
                     <?php
                     include 'conexion.php';
 
@@ -80,9 +81,10 @@ include 'conexion.php';
 
 
                 <div class="icon-label">
-                    <img src="img/tipe.png" alt="Tipo de Cancha">
+                    Tipo de Cancha <img src="img/tipe.png" alt="Tipo de Cancha">
                 </div>
                 <select id="tipo-cancha">
+                    <option value=""></option> <!-- Opción en blanco -->
                     <?php
                     include 'conexion.php';
 
@@ -107,106 +109,83 @@ include 'conexion.php';
 
 
                 <div class="icon-label">
-                    <img src="img/calendario.png" alt="Fecha">
+                    Fecha <img src="img/calendario.png" alt="Fecha">
                 </div>
                 <input type="date" id="fr">
                 <br>
-                <button id="consultar-button">Consultar</button>
+                <button id="consultar-button" type="button">Consultar</button>
             </div>
+
+            <div>
+
+            </div>
+
         </div>
 
-        
 
         <div class="horario-window">
             <h1>Horario de Reservas</h1>
             <p>Fecha seleccionada: <span id="fecha-seleccionada"></span></p>
             <p>Tipo de Cancha: <span id="tipo-cancha-seleccionado"></span></p>
 
-            <table>
+            <table table id="tabla-disponibilidad">
                 <tr>
                     <th>Hora</th>
                     <th>Disponibilidad</th>
                     <th>Reservar/Cancelar Reserva</th>
                 </tr>
                 <!-- Repite este bloque para cada hora -->
-                <tr>
-                    <td>3:00 PM</td>
-                    <td>Disponible</td>
-                    <td>
-                        <form action="procesar_reserva.php" method="post">
-                            <div class="button-container">
-                                <button type="submit" name="reservar" class="reservar-button">Reservar</button>
-                                <button type="submit" name="cancelar" class="cancelar-button">Cancelar Reserva</button>
-                            </div>
-                        </form>
-                    </td>
-                </tr>
-                <tr>
-                    <td>4:00 PM</td>
-                    <td>Disponible</td>
-                    <td>
-                        <form action="procesar_reserva.php" method="post">
-                            <div class="button-container">
-                                <button type="submit" name="reservar" class="reservar-button">Reservar</button>
-                                <button type="submit" name="cancelar" class="cancelar-button">Cancelar Reserva</button>
-                            </div>
-                        </form>
-                    </td>
-                </tr>
-                <tr>
-                    <td>5:00 PM</td>
-                    <td>Disponible</td>
-                    <td>
-                        <form action="procesar_reserva.php" method="post">
-                            <div class="button-container">
-                                <button type="submit" name="reservar" class="reservar-button">Reservar</button>
-                                <button type="submit" name="cancelar" class="cancelar-button">Cancelar Reserva</button>
-                            </div>
-                        </form>
-                    </td>
-                </tr>
-                <tr>
-                    <td>6:00 PM</td>
-                    <td>Disponible</td>
-                    <td>
-                        <form action="procesar_reserva.php" method="post">
-                            <div class="button-container">
-                                <button type="submit" name="reservar" class="reservar-button">Reservar</button>
-                                <button type="submit" name="cancelar" class="cancelar-button">Cancelar Reserva</button>
-                            </div>
-                        </form>
-                    </td>
-                </tr>
-                <tr>
-                    <td>7:00 PM</td>
-                    <td>Disponible</td>
-                    <td>
-                        <form action="procesar_reserva.php" method="post">
-                            <div class="button-container">
-                                <button type="submit" name="reservar" class="reservar-button">Reservar</button>
-                                <button type="submit" name="cancelar" class="cancelar-button">Cancelar Reserva</button>
-                            </div>
-                        </form>
-                    </td>
-                </tr>
-                <tr>
-                    <td>8:00 PM</td>
-                    <td>Disponible</td>
-                    <td>
-                        <form action="procesar_reserva.php" method="post">
-                            <div class="button-container">
-                                <button type="submit" name="reservar" class="reservar-button">Reservar</button>
-                                <button type="submit" name="cancelar" class="cancelar-button">Cancelar Reserva</button>
-                            </div>
-                        </form>
-                    </td>
-                </tr>
-                <!-- Agrega más filas para las horas restantes -->
 
             </table>
 
         </div>
     </div>
-</body>
+    <!--------------------------------------------------------------------------------------------------------------------->
 
+    <script>
+        document.getElementById("consultar-button").addEventListener("click", function () {
+            // Obtener el valor seleccionado en el selector de tipo de cancha
+            var tipoCancha = document.getElementById("tipo-cancha").value;
+
+            // Obtener el valor de la fecha seleccionada
+            var fechaSeleccionada = document.getElementById("fr").value;
+
+            // Actualizar el contenido de las etiquetas <span> en la sección "Horario de Reservas"
+            document.getElementById("fecha-seleccionada").textContent = fechaSeleccionada;
+            document.getElementById("tipo-cancha-seleccionado").textContent = tipoCancha;
+
+           // window.location.href = "disponibilidad.php?tipoCancha=" + tipoCancha + "&fechaSeleccionada=" + fechaSeleccionada;
+
+
+            // Mostrar los valores en una ventana emergente
+           // alert("Tipo de Cancha: " + tipoCancha + "\nFecha Seleccionada: " + fechaSeleccionada);
+        });
+    </script>
+
+<script>
+    document.getElementById("consultar-button").addEventListener("click", function () {
+        // Obtener el valor seleccionado en el selector de tipo de cancha
+        var tipoCancha = document.getElementById("tipo-cancha").value;
+
+        // Obtener el valor de la fecha seleccionada
+        var fechaSeleccionada = document.getElementById("fr").value;
+
+        // Realizar una solicitud AJAX para cargar la disponibilidad
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'disponibilidad.php?tipoCancha=' + tipoCancha + '&fechaSeleccionada=' + fechaSeleccionada, true);
+
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                // Actualizar la tabla de disponibilidad con los datos recibidos
+                document.getElementById("tabla-disponibilidad").innerHTML = xhr.responseText;
+            } else {
+                // Manejar errores
+                console.error('Error al cargar la disponibilidad');
+            }
+        };
+
+        xhr.send();
+    });
+</script>
+</body>
 </html>

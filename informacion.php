@@ -73,9 +73,9 @@ include 'conexion.php';
 
         <div class="cancha-contact">
             <h2>Contacto</h2>
-            <p id="i3">Dirección: Calle de la Cancha, Ciudad</p>
-            <p id="i3">Teléfono: +123 456 789</p>
-            <p id="i3">Correo Electrónico: info@canchapasion.com</p>
+            <p id="i3">Dirección: Cra. 5 #13-54, Pasto, Nariño</p>
+            <p id="i3">Teléfono: 311 6030335</p>
+            <p id="i3">Correo Electrónico: LaPasionFut@gmail.com</p>
         </div>
 
         <div class="cancha-social">
