@@ -6,15 +6,7 @@ $sql = "SELECT * FROM empresa"; // Asegúrate de que el nombre de la tabla coinc
 
 $result = $conn->query($sql);
 
-// Crea un estilo CSS para los recuadros
-echo '<style>
-    .cancha-box {
-        border: 1px solid #ccc;
-        padding: 10px;
-        margin: 10px;
-        background-color: #f9f9f9;
-    }
-</style>';
+
 
 ?>
 
@@ -67,7 +59,7 @@ echo '<style>
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             echo '<div class="cancha-box">';
-            echo '<h2>Nombre de la cancha: ' . $row["Razon_Social"] . '</h2>';
+            echo '<h2>Cancha: ' . $row["Razon_Social"] . '</h2>';
             echo '<p>Ubicación: ' . $row["Direccion"] . '</p>';
             echo '<a href="informacion.php?id=' . $row["Id_Empresa"] . '">Ver detalles</a>';
             echo '</div>';

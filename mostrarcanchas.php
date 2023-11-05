@@ -6,15 +6,6 @@ $sql = "SELECT * FROM empresa"; // Asegúrate de que el nombre de la tabla coinc
 
 $result = $conn->query($sql);
 
-// Crea un estilo CSS para los recuadros
-echo '<style>
-    .empresa-box {
-        border: 1px solid #ccc;
-        padding: 10px;
-        margin: 10px;
-        background-color: #f9f9f9;
-    }
-</style>';
 
 if ($result->num_rows > 0) {
     // Mostrar los datos de las empresas en recuadros

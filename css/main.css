@@ -444,3 +444,34 @@ button:hover {
 .reservar-button:hover, .cancelar-button:hover {
     background-color: #0056b3;
 }
+
+
+
+
+/* estilos.css */
+
+.cancha-box {
+    font-size: 12;
+    border: 1px solid #000000;
+    padding: 10px;
+    margin: 10px;
+    background-color: #bbbbbb;
+    text-align: center;
+    width: 500px; /* Establece el ancho fijo en píxeles */
+}
+
+
+.cancha-box h2 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.cancha-box p {
+    font-size: 1.1em;
+}
+
+.cancha-box a {
+    display: block;
+    text-decoration: none;
+    color: #007BFF;
+}
