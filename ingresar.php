@@ -1,11 +1,12 @@
 <?php
-  session_start();
+include 'conexion.php';
+session_start();
 
-  if(isset($_SESSION['usuario'])){
-    header("location: bienvenido.php");
-  }
-
+if (isset($_SESSION["id_usuario"])) {
+    header("Location: index.php");
+}
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,7 +49,7 @@
                     <div class="form-get_into">
                         <img src="img/perfil1.png" alt="login">
                         <p class="text">Bienvenido</p>
-                        <form class="login-form" action="login.php" method="post">
+                        <form class="login-form" action="acceso.php" method="post">
                             <input type="text" placeholder="email" name="correo_u">
                             <br>
                             <input type="password" placeholder="Contraseña" name="Contraseña_i">

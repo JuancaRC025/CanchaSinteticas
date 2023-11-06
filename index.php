@@ -11,6 +11,8 @@ include 'conexion.php';
     <title>PlayGroundPro</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <script src='main.js'></script>
 </head>
 <style>
@@ -46,7 +48,11 @@ include 'conexion.php';
     ">Empresa</a>
             </div>
         </li>
-        <li class="nav-item"><a href="ingresar.php">Ingresar</a></li>
+        <li class="nav-item"><a href="Ingresar.php">Ingresar</a></li>
+        <li><a href="cerrar_sesion.php" class="cerrar-sesion">
+                <i class="fas fa-sign-out-alt"></i>
+            </a>
+        </li>
     </ul>
     <br>
     <br>
@@ -57,9 +63,9 @@ include 'conexion.php';
             <p>Iniciar Sesión</p>
         </a>
         <a href="https://maps.app.goo.gl/YsjDFmoArxzwYp7f7" class="option" id="get-location">
-        <img src="img/mapa.png" alt="Selecciona tu Ubicación">
-        <p>Selecciona tu Ubicación</p>
-    </a>
+            <img src="img/mapa.png" alt="Selecciona tu Ubicación">
+            <p>Selecciona tu Ubicación</p>
+        </a>
 
         <a href="canchas.php" class="option">
             <img src="img/calendario.png" alt="Reserva tu Cancha">

@@ -1,5 +1,6 @@
 <?php
 include 'conexion.php';
+session_start(); // Inicia la sesión
 
 // Obtener los parámetros de la URL (tipoCancha y fechaSeleccionada)
 $tipoCancha = $_GET['tipoCancha'];
@@ -61,9 +62,7 @@ foreach ($horasDisponibles as $hora) {
             <input type="hidden" name="tipoCancha" value="' . $tipoCancha . '">
             <input type="hidden" name="fechaSeleccionada" value="' . $fechaSeleccionada . '">
             <input type="hidden" name="hora" value="' . $hora . '">
-            
-            <label for="idUsuario">Id de Usuario:</label>
-            <input type="text" name="idUsuario" id="idUsuario" required>
+            <input type="hidden" name="idUsuario" id="idUsuario" value='.$_SESSION["id_usuario"].'>
     
             <input type="submit" name="reservar" value="Reservar">
         </form>
