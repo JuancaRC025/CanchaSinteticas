@@ -25,7 +25,8 @@ echo '<tr><th>Hora</th><th>Disponibilidad</th><th>Reservar/Cancelar Reserva</th>
 
 $horasDisponibles = array("15:00:00", "16:00:00", "17:00:00", "18:00:00", "19:00:00", "20:00:00");
 
-function buscarHora($array, $key, $value) {
+function buscarHora($array, $key, $value)
+{
     $results = null;
     foreach ($array as $object) {
         if (isset($object[$key]) && $object[$key] === $value) {
@@ -50,19 +51,24 @@ foreach ($horasDisponibles as $hora) {
         echo '<td>' . $res['Id_Reserva'] . '</td>';
 
 
-        
+
         // Agregar un formulario oculto para enviar el Id_Reserva
-    
+
     } else {
         echo '<td>Disponible</td>';
         echo '<td>
-            <form method="post" action="procesar_reserva.php">
-                <input type="hidden" name="tipoCancha" value="' . $tipoCancha . '">
-                <input type="hidden" name="fechaSeleccionada" value="' . $fechaSeleccionada . '">
-                <input type="hidden" name="hora" value="' . $hora . '">
-                <input type="submit" name="reservar" value="Reservar">
-            </form>
-        </td>';
+        <form method="post" action="procesar_reserva.php">
+            <input type="hidden" name="tipoCancha" value="' . $tipoCancha . '">
+            <input type="hidden" name="fechaSeleccionada" value="' . $fechaSeleccionada . '">
+            <input type="hidden" name="hora" value="' . $hora . '">
+            
+            <label for="idUsuario">Id de Usuario:</label>
+            <input type="text" name="idUsuario" id="idUsuario" required>
+    
+            <input type="submit" name="reservar" value="Reservar">
+        </form>
+    </td>';
+    
     }
     echo '</tr>';
 }
