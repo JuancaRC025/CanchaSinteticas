@@ -52,7 +52,7 @@ include 'conexion.php';
     <br>
     <br>
     <div class="options">
-        <a href="formulario_iniciar_sesion.php" class="option">
+        <a href="ingresar.php" class="option">
             <img src="img/usuario.png" alt="Iniciar Sesión">
             <p>Iniciar Sesión</p>
         </a>
@@ -60,7 +60,7 @@ include 'conexion.php';
             <img src="img/mapa.png" alt="Selecciona tu Ubicación">
             <p>Selecciona tu Ubicación</p>
         </a>
-        <a href="formulario_reserva_cancha.php" class="option">
+        <a href="canchas.php" class="option">
             <img src="img/calendario.png" alt="Reserva tu Cancha">
             <p>Reserva tu Cancha</p>
         </a>

@@ -140,6 +140,9 @@ include 'conexion.php';
 
         </div>
     </div>
+
+
+
     <!--------------------------------------------------------------------------------------------------------------------->
 
     <script>
@@ -154,38 +157,39 @@ include 'conexion.php';
             document.getElementById("fecha-seleccionada").textContent = fechaSeleccionada;
             document.getElementById("tipo-cancha-seleccionado").textContent = tipoCancha;
 
-           // window.location.href = "disponibilidad.php?tipoCancha=" + tipoCancha + "&fechaSeleccionada=" + fechaSeleccionada;
+            // window.location.href = "disponibilidad.php?tipoCancha=" + tipoCancha + "&fechaSeleccionada=" + fechaSeleccionada;
 
 
             // Mostrar los valores en una ventana emergente
-           // alert("Tipo de Cancha: " + tipoCancha + "\nFecha Seleccionada: " + fechaSeleccionada);
+            // alert("Tipo de Cancha: " + tipoCancha + "\nFecha Seleccionada: " + fechaSeleccionada);
         });
     </script>
 
-<script>
-    document.getElementById("consultar-button").addEventListener("click", function () {
-        // Obtener el valor seleccionado en el selector de tipo de cancha
-        var tipoCancha = document.getElementById("tipo-cancha").value;
+    <script>
+        document.getElementById("consultar-button").addEventListener("click", function () {
+            // Obtener el valor seleccionado en el selector de tipo de cancha
+            var tipoCancha = document.getElementById("tipo-cancha").value;
 
-        // Obtener el valor de la fecha seleccionada
-        var fechaSeleccionada = document.getElementById("fr").value;
+            // Obtener el valor de la fecha seleccionada
+            var fechaSeleccionada = document.getElementById("fr").value;
 
-        // Realizar una solicitud AJAX para cargar la disponibilidad
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'disponibilidad.php?tipoCancha=' + tipoCancha + '&fechaSeleccionada=' + fechaSeleccionada, true);
+            // Realizar una solicitud AJAX para cargar la disponibilidad
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'disponibilidad.php?tipoCancha=' + tipoCancha + '&fechaSeleccionada=' + fechaSeleccionada, true);
 
-        xhr.onload = function () {
-            if (xhr.status === 200) {
-                // Actualizar la tabla de disponibilidad con los datos recibidos
-                document.getElementById("tabla-disponibilidad").innerHTML = xhr.responseText;
-            } else {
-                // Manejar errores
-                console.error('Error al cargar la disponibilidad');
-            }
-        };
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    // Actualizar la tabla de disponibilidad con los datos recibidos
+                    document.getElementById("tabla-disponibilidad").innerHTML = xhr.responseText;
+                } else {
+                    // Manejar errores
+                    console.error('Error al cargar la disponibilidad');
+                }
+            };
 
-        xhr.send();
-    });
-</script>
+            xhr.send();
+        });
+    </script>
 </body>
+
 </html>
