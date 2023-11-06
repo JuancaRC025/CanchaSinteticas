@@ -31,8 +31,8 @@ include 'conexion.php';
             <h1 id="i1">PLAYGROUND PRO</h1>
             <h2 id="i2">"Encuentra, reserva y disfruta de canchas sintéticas al alcance de tu mano"</h2>
         </div>
-    </div> 
-  
+    </div>
+
     <ul class="navbar">
         <li class="nav-item"><a href="index.php">Inicio</a></li>
         <li class="nav-item"><a href="canchas.php">Canchas</a></li>
@@ -56,10 +56,11 @@ include 'conexion.php';
             <img src="img/usuario.png" alt="Iniciar Sesión">
             <p>Iniciar Sesión</p>
         </a>
-        <a href="formulario_selecciona_ubicacion.php" class="option">
-            <img src="img/mapa.png" alt="Selecciona tu Ubicación">
-            <p>Selecciona tu Ubicación</p>
-        </a>
+        <a href="https://maps.app.goo.gl/YsjDFmoArxzwYp7f7" class="option" id="get-location">
+        <img src="img/mapa.png" alt="Selecciona tu Ubicación">
+        <p>Selecciona tu Ubicación</p>
+    </a>
+
         <a href="canchas.php" class="option">
             <img src="img/calendario.png" alt="Reserva tu Cancha">
             <p>Reserva tu Cancha</p>

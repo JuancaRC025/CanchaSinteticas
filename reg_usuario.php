@@ -11,6 +11,7 @@ include 'conexion.php';
     <title>Registrar Usuario</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <script src='main.js'></script>
 </head>
 <style>
@@ -59,26 +60,30 @@ include 'conexion.php';
         <input type="email" id="correo" name="correo" required placeholder="Correo electronico">
 
         <label for="telefono">Número de Teléfono:</label>
-        <input type="tel" id="telefono" name="telefono" placeholder="Número de teléfono" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+        <input type="tel" id="telefono" name="telefono" placeholder="Número de teléfono" required
+            oninput="this.value = this.value.replace(/[^0-9]/g, '')">
 
         <label for="contrasena">Contraseña:</label>
         <input type="password" id="contrasena" name="contrasena" required placeholder="************">
-        <button id="toggle-password">Mostrar Contraseña</button>
+        <span id="toggle-password" class="password-icon"><i class="fas fa-eye-slash"></i></span>
 
         <script>
-            const passwordField = document.getElementById("contrasena");
-            const toggleButton = document.getElementById("toggle-password");
+            document.addEventListener("DOMContentLoaded", function () {
+                var passwordInput = document.getElementById("contrasena");
+                var toggleIcon = document.getElementById("toggle-password");
 
-            toggleButton.addEventListener("click", function () {
-                if (passwordField.type === "password") {
-                    passwordField.type = "text";
-                    toggleButton.textContent = "Ocultar Contraseña";
-                } else {
-                    passwordField.type = "password";
-                    toggleButton.textContent = "Mostrar Contraseña";
-                }
+                toggleIcon.addEventListener("click", function () {
+                    if (passwordInput.type === "password") {
+                        passwordInput.type = "text"; // Mostrar contraseña
+                        toggleIcon.innerHTML = '<i class="fas fa-eye"></i>'; // Cambiar al ícono de ojo abierto
+                    } else {
+                        passwordInput.type = "password"; // Ocultar contraseña
+                        toggleIcon.innerHTML = '<i class="fas fa-eye-slash"></i>'; // Cambiar al ícono de ojo cerrado
+                    }
+                });
             });
         </script>
+
 
         <br>
         <button type="submit">Crear mi cuenta</button>
