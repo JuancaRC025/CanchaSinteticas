@@ -49,6 +49,7 @@ include 'conexion.php';
             </div>
         </li>
         <li class="nav-item"><a href="Ingresar.php">Ingresar</a></li>
+        
         <li><a href="cerrar_sesion.php" class="cerrar-sesion">
                 <i class="fas fa-sign-out-alt"></i>
             </a>
@@ -72,6 +73,8 @@ include 'conexion.php';
             <p>Reserva tu Cancha</p>
         </a>
     </div>
+
+
 
 </body>
 

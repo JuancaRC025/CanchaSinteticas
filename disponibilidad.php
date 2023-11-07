@@ -2,6 +2,15 @@
 include 'conexion.php';
 session_start(); // Inicia la sesión
 
+// Verificar si la sesión está iniciada
+if (!isset($_SESSION["id_usuario"])) {
+    // No hay sesión iniciada, mostrar mensaje y redirigir al usuario
+    echo "No hay sesión iniciada. Por favor, Ve a Ingresar o registrar.";
+    //header("Location: ingresar.php");
+    exit; // Detener la ejecución del resto del código
+}
+
+
 // Obtener los parámetros de la URL (tipoCancha y fechaSeleccionada)
 $tipoCancha = $_GET['tipoCancha'];
 $fechaSeleccionada = $_GET['fechaSeleccionada'];
