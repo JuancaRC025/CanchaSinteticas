@@ -53,12 +53,12 @@ foreach ($horasDisponibles as $hora) {
     if ($res !== null) {
         echo '<td>No disponible</td>';
         echo '<td>
-        <form method="post" action="eliminar_reserva.php">
+        <form method="post" action="procesar_eliminar.php">
             <input type="hidden" name="idRes" value="' . $res['Id_Reserva'] . '">
             <input type="submit" name="cancelarReserva" value="Cancelar">
         </form>
     </td>';
-        echo '<td>' . $res['Id_Reserva'] . '</td>';
+       // echo '<td>' . $res['Id_Reserva'] . '</td>';
 
 
 

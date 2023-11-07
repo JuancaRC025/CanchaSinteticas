@@ -150,23 +150,33 @@ include 'conexion.php';
     <!--------------------------------------------------------------------------------------------------------------------->
 
     <script>
-        document.getElementById("consultar-button").addEventListener("click", function () {
-            // Obtener el valor seleccionado en el selector de tipo de cancha
-            var tipoCancha = document.getElementById("tipo-cancha").value;
+document.getElementById("consultar-button").addEventListener("click", function () {
+    // Obtener el valor seleccionado en el selector de tipo de cancha
+    var tipoCancha = document.getElementById("tipo-cancha").value;
 
-            // Obtener el valor de la fecha seleccionada
-            var fechaSeleccionada = document.getElementById("fr").value;
+    // Obtener el valor de la fecha seleccionada
+    var fechaSeleccionada = document.getElementById("fr").value;
 
-            // Actualizar el contenido de las etiquetas <span> en la sección "Horario de Reservas"
-            document.getElementById("fecha-seleccionada").textContent = fechaSeleccionada;
-            document.getElementById("tipo-cancha-seleccionado").textContent = tipoCancha;
+    // Validar si el tipo de cancha está en blanco
+    if (tipoCancha.trim() === "") {
+        alert("Por favor, selecciona un tipo de cancha.");
+        return;
+    }
 
-            // window.location.href = "disponibilidad.php?tipoCancha=" + tipoCancha + "&fechaSeleccionada=" + fechaSeleccionada;
+    // Validar si la fecha no se ha seleccionado
+    if (fechaSeleccionada.trim() === "") {
+        alert("Por favor, selecciona una fecha.");
+        return;
+    }
 
+    // Si ambos campos están completos, continuar con la acción
+    // Actualizar el contenido de las etiquetas <span> en la sección "Horario de Reservas"
+    document.getElementById("fecha-seleccionada").textContent = fechaSeleccionada;
+    document.getElementById("tipo-cancha-seleccionado").textContent = tipoCancha;
 
-            // Mostrar los valores en una ventana emergente
-            // alert("Tipo de Cancha: " + tipoCancha + "\nFecha Seleccionada: " + fechaSeleccionada);
-        });
+    // window.location.href = "disponibilidad.php?tipoCancha=" + tipoCancha + "&fechaSeleccionada=" + fechaSeleccionada;
+});
+
     </script>
 
     <script>
