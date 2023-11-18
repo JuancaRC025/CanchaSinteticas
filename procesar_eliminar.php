@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 xhr.onload = function() {
                     if (xhr.status === 200) {
-                        alert("Reserva Cancelada, Espere Por Favor");
+                        alert("Reserva Cancelada Con Exito");
                         window.location.href = "reservar.php";
                     } else {
                         alert("Error al cancelar la reserva: " + xhr.responseText);

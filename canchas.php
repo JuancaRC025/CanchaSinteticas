@@ -1,5 +1,6 @@
 <?php
 include 'conexion.php';
+session_start();
 
 // Realiza una consulta para recuperar las canchas desde la base de datos
 $sql = "SELECT * FROM empresa"; // Asegúrate de que el nombre de la tabla coincida con tu base de datos
@@ -42,7 +43,10 @@ $result = $conn->query($sql);
     <ul class="navbar">
         <li class="nav-item"><a href="index.php">Inicio</a></li>
         <li class="nav-item"><a href="canchas.php">Canchas</a></li>
-        <li class="nav-item"><a href="#">Soporte</a></li>
+        <li class="nav-item">
+  <a href="https://api.whatsapp.com/send?phone=3027500507&text=Tengo%20problemas%20de%20acceso%20o%20requiero%20información.%20¿Me%20pueden%20ayudar%3F" target="_blank">Soporte</a>
+</li>
+
         <li class="nav-item dropdown">
             <a href="#">Registrar</a>
             <div class="dropdown-content">

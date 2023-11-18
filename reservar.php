@@ -1,5 +1,6 @@
 <?php
 include 'conexion.php';
+session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,7 +36,11 @@ include 'conexion.php';
     <ul class="navbar">
         <li class="nav-item"><a href="index.php">Inicio</a></li>
         <li class="nav-item"><a href="canchas.php">Canchas</a></li>
-        <li class="nav-item"><a href="#">Soporte</a></li>
+        <li class="nav-item">
+        <a href="https://api.whatsapp.com/send?phone=3027500507&text=Tengo%20problemas%20de%20acceso%20o%20requiero%20información.%20¿Me%20pueden%20ayudar%3F"
+            target="_blank">Soporte</a>
+        </li>
+
         <li class="nav-item dropdown">
             <a href="#">Registrar</a>
             <div class="dropdown-content">
@@ -150,32 +155,32 @@ include 'conexion.php';
     <!--------------------------------------------------------------------------------------------------------------------->
 
     <script>
-document.getElementById("consultar-button").addEventListener("click", function () {
-    // Obtener el valor seleccionado en el selector de tipo de cancha
-    var tipoCancha = document.getElementById("tipo-cancha").value;
+        document.getElementById("consultar-button").addEventListener("click", function () {
+            // Obtener el valor seleccionado en el selector de tipo de cancha
+            var tipoCancha = document.getElementById("tipo-cancha").value;
 
-    // Obtener el valor de la fecha seleccionada
-    var fechaSeleccionada = document.getElementById("fr").value;
+            // Obtener el valor de la fecha seleccionada
+            var fechaSeleccionada = document.getElementById("fr").value;
 
-    // Validar si el tipo de cancha está en blanco
-    if (tipoCancha.trim() === "") {
-        alert("Por favor, selecciona un tipo de cancha.");
-        return;
-    }
+            // Validar si el tipo de cancha está en blanco
+            if (tipoCancha.trim() === "") {
+                alert("Por favor, selecciona un tipo de cancha.");
+                return;
+            }
 
-    // Validar si la fecha no se ha seleccionado
-    if (fechaSeleccionada.trim() === "") {
-        alert("Por favor, selecciona una fecha.");
-        return;
-    }
+            // Validar si la fecha no se ha seleccionado
+            if (fechaSeleccionada.trim() === "") {
+                alert("Por favor, selecciona una fecha.");
+                return;
+            }
 
-    // Si ambos campos están completos, continuar con la acción
-    // Actualizar el contenido de las etiquetas <span> en la sección "Horario de Reservas"
-    document.getElementById("fecha-seleccionada").textContent = fechaSeleccionada;
-    document.getElementById("tipo-cancha-seleccionado").textContent = tipoCancha;
+            // Si ambos campos están completos, continuar con la acción
+            // Actualizar el contenido de las etiquetas <span> en la sección "Horario de Reservas"
+            document.getElementById("fecha-seleccionada").textContent = fechaSeleccionada;
+            document.getElementById("tipo-cancha-seleccionado").textContent = tipoCancha;
 
-    // window.location.href = "disponibilidad.php?tipoCancha=" + tipoCancha + "&fechaSeleccionada=" + fechaSeleccionada;
-});
+            // window.location.href = "disponibilidad.php?tipoCancha=" + tipoCancha + "&fechaSeleccionada=" + fechaSeleccionada;
+        });
 
     </script>
 

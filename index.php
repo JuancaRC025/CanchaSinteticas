@@ -12,7 +12,6 @@ include 'conexion.php';
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
     <script src='main.js'></script>
 </head>
 <style>
@@ -38,7 +37,10 @@ include 'conexion.php';
     <ul class="navbar">
         <li class="nav-item"><a href="index.php">Inicio</a></li>
         <li class="nav-item"><a href="canchas.php">Canchas</a></li>
-        <li class="nav-item"><a href="#">Soporte</a></li>
+        <li class="nav-item">
+  <a href="https://api.whatsapp.com/send?phone=3027500507&text=Tengo%20problemas%20de%20acceso%20o%20requiero%20información.%20¿Me%20pueden%20ayudar%3F" target="_blank">Soporte</a>
+</li>
+
         <li class="nav-item dropdown">
             <a href="#">Registrar</a>
             <div class="dropdown-content">
@@ -49,6 +51,7 @@ include 'conexion.php';
             </div>
         </li>
         <li class="nav-item"><a href="Ingresar.php">Ingresar</a></li>
+        
         
         <li><a href="cerrar_sesion.php" class="cerrar-sesion">
                 <i class="fas fa-sign-out-alt"></i>

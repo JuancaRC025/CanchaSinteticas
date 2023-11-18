@@ -32,7 +32,7 @@ h2 {
 .header {
     display: flex;
     justify-content: space-between;
-    background-color: #00000000;
+    background-color: #aaaaaa47;
     padding: 10px 20px;
     align-items: center;
 }
@@ -479,29 +479,69 @@ button:hover {
 
 
 /* Estilo para la barra de navegación */
+.navbar {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+/* Asegúrate de que .nav tenga un ancho del 100% y esté alineado a la derecha */
 .nav {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex; /* Mostrar los elementos en línea */
-    justify-content: flex-end; /* Alineación a la derecha */
+    justify-content: space-between; /* Distribuir los elementos a lo largo de la barra */
     align-items: center; /* Alinear verticalmente al centro */
-}
-.nav-item {
-    margin-right: 10px; /* Espacio entre elementos */
+    width: 100%; /* Ancho del 100% */
 }
 
+.nav-item {
+    margin-right: 10px; /* Ajusta el margen entre elementos según sea necesario */
+}
 /* Estilo para el enlace del icono de cierre de sesión */
 .cerrar-sesion a {
     text-decoration: none;
     color: #000000; /* Color del texto */
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido */
+    margin-right: 20px; /* Ajusta el margen derecho según sea necesario */
 }
 
-/* Estilo para el icono */
+/* Estilo para el icono de cierre de sesión */
 .cerrar-sesion i {
-
-    margin-left: 650px; /* Espacio entre el texto y el icono */
-    font-size: 35px; /* Tamaño del icono */
-    vertical-align: 20px;
+    font-size: 30px; /* Tamaño de la fuente, ajusta según sea necesario */
+    color: #000000; /* Cambia el color del icono, utiliza el código de color que prefieras */
+    margin-left: 650px !important; /* Ajusta el espacio entre el texto y el icono */
+    vertical-align: middle !important; /* Alinea verticalmente el icono al centro */
 }
 
+
+/* Ajusta el margen entre "Ingresar" y "Cerrar Sesión" */
+.nav-item:last-child {
+    margin-right: 50px;
+}
+
+
+
+/* ----------------------Metodos de pago------------------------------ */
+#verFormasPago {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center !important;
+    margin-top: 20px; /* Puedes ajustar el margen según tu diseño */
+    margin-bottom: 10px; /* Ajusta el margen inferior según sea necesario */
+}
+
+.imagenes-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+}
+
+.imagenes-container img {
+    width: 200px; /* Ajusta el ancho de las imágenes según sea necesario */
+    height: 150px; /* Mantiene la proporción de aspecto original */
+    margin-right: 1px; /* Espaciado a la derecha de cada imagen */
+}

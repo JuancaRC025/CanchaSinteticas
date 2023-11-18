@@ -118,7 +118,7 @@ nav{
 .header {
     display: flex;
     justify-content: space-between;
-    background-color: #00000000;
+    background-color: #aaaaaa47;
     padding: 10px 20px;
     align-items: center;
 }

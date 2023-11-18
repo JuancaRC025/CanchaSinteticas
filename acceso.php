@@ -3,12 +3,12 @@ include 'conexion.php';
 session_start();
 
 if (isset($_SESSION["id_usuario"])) {
-    header("Location: index.php");
+    header("Location: bienvenido.php");  // Redirige a bienvenido.php si el usuario ya está autenticado
 }
 
 if (!empty($_POST)) {
     $correo = $_POST['correo_u'];
-    $password = md5($_POST['Contraseña_i']);
+    $password = $_POST['Contraseña_i'];
 
     // Prepara la consulta
     $sql = "SELECT * FROM Usuario WHERE Correo_Electronico = '$correo' AND Contraseña = '$password'";
@@ -24,31 +24,24 @@ if (!empty($_POST)) {
     if ($rows > 0) {
         while ($row = $result->fetch_assoc()) {
             $_SESSION['id_usuario'] = $row['Id_Usuario'];
-            //  $tipoUsuario = $row['id_tipo_usuario'];
+            $nombreUsuario = $row['Nombres'];  // Obtén el nombre del usuario
         }
 
-        // switch ($tipoUsuario) {
-        //     case 1:
-        //         header("Location: Administrador.php");
-        //         break;
-        //     case 2:
-        //         header("Location: Cliente.php");
-        //         break;
-        // }
         echo '<script>
-    alert("Ingreso Exitoso");
-    setTimeout(function() {
-        window.location.href = "index.php";
-    }, 1000); // Redirigir después de 1 segundo
-</script>';
+            alert("Ingreso Exitoso, Bienvenido ' . $nombreUsuario . '");
+            setTimeout(function() {
+                window.location.href = "bienvenido.php";
+            }, 1000); // Redirigir después de 5 segundos
+        </script>';
     } else {
         echo '<script>
-    alert("Datos incorrectos, Por favor Verifique sus Datos");
-    window.location.href = "ingresar.php";
-</script>';
+            alert("Datos incorrectos, Por favor Verifique sus Datos");
+            window.location.href = "ingresar.php";
+        </script>';
     }
 
     // Cierra la conexión
     $conn->close();
 }
 ?>
+
