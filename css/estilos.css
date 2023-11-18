@@ -11,8 +11,8 @@ body{
 }
 
 main{
-    width: 100%;
-    margin: auto;
+  
+    margin: 28px;
 }
 
 .contenedor__todo{

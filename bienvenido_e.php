@@ -1,6 +1,7 @@
 <?php
-session_start();
 include 'conexion.php';
+session_start();
+
 
 // Verifica si el Id_empresa está definido en la sesión
 $empresa_id = isset($_SESSION['id_empresa']) ? $_SESSION['id_empresa'] : null;
@@ -10,7 +11,7 @@ if (!$empresa_id) {
     echo '<script>
         setTimeout(function() {
             window.location.href = "ingresar.php";
-        }, 10000); // Redirigir después de 10 segundos
+        }, 1000); // Redirigir después de 10 segundos
     </script>';
     exit();  // Agregado para evitar que el resto del código se ejecute
 }
@@ -83,7 +84,7 @@ if ($resultado_info) {
     <h2>Opciones de Perfil</h2>
     <ul>
         <li><a href="editar_perfil.html">Editar Perfil</a></li>
-        <li><a href="cambiar_contraseña.html">Administrar Usuarios</a></li>
+        <li><a href="admin_us.php">Administrar Usuarios</a></li>
         <li><a href="cerrar_sesion.php">Cerrar sesión</a></li>
     </ul>
 </body>
