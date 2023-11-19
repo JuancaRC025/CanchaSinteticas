@@ -500,29 +500,40 @@ button:hover {
     margin-right: 10px; /* Ajusta el margen entre elementos según sea necesario */
 }
 /* Estilo para el enlace del icono de cierre de sesión */
-.cerrar-sesion a {
-    text-decoration: none;
-    color: #000000; /* Color del texto */
-    display: flex;
-    align-items: center; /* Centra verticalmente el contenido */
-    margin-right: 20px; /* Ajusta el margen derecho según sea necesario */
+.cerrar-sesion {
+    color: #000 !important; /* Cambia el color según tus preferencias */
+    font-size: 25px; /* Ajusta el tamaño del texto */
+    text-decoration: none; /* Elimina el subrayado predeterminado del enlace */
+    display: flex; /* Utiliza flexbox para centrar verticalmente */
+    align-items: center; /* Centra verticalmente el contenido del enlace */
+    float: right; /* Coloca el elemento a la derecha */
+    margin-right: 30px; /* Ajusta el espacio desde el borde derecho */
 }
 
 /* Estilo para el icono de cierre de sesión */
 .cerrar-sesion i {
-    font-size: 30px; /* Tamaño de la fuente, ajusta según sea necesario */
-    color: #000000; /* Cambia el color del icono, utiliza el código de color que prefieras */
-    margin-left: 650px !important; /* Ajusta el espacio entre el texto y el icono */
-    vertical-align: middle !important; /* Alinea verticalmente el icono al centro */
+    margin-right: 5px; /* Ajusta el espacio entre el ícono y el texto si es necesario */
+    /* Puedes ajustar la posición vertical del ícono según tus necesidades */
+    margin-top: 10px; /* Ajusta la posición vertical del ícono */
 }
 
-
-/* Ajusta el margen entre "Ingresar" y "Cerrar Sesión" */
-.nav-item:last-child {
-    margin-right: 50px;
+/* Estilo para el enlace del perfil */
+.perfil {
+    color: #000 !important; /* Cambia el color según tus preferencias */
+    font-size: 25px; /* Ajusta el tamaño del texto */
+    text-decoration: none; /* Elimina el subrayado predeterminado del enlace */
+    display: flex; /* Utiliza flexbox para centrar verticalmente */
+    align-items: center; /* Centra verticalmente el contenido del enlace */
+    float: right; /* Coloca el elemento a la derecha */
+    margin-right: 60px !important; /* Ajusta el espacio desde el borde derecho */
 }
 
-
+/* Estilo para el ícono dentro del enlace */
+.perfil i {
+    margin-right: 5px; /* Ajusta el espacio entre el ícono y el texto si es necesario */
+    /* Puedes ajustar la posición vertical del ícono según tus necesidades */
+    margin-top: 10px; /* Ajusta la posición vertical del ícono */
+}
 
 /* ----------------------Metodos de pago------------------------------ */
 #verFormasPago {
@@ -545,3 +556,8 @@ button:hover {
     height: 150px; /* Mantiene la proporción de aspecto original */
     margin-right: 1px; /* Espaciado a la derecha de cada imagen */
 }
+
+
+
+
+

@@ -98,7 +98,7 @@ session_start();
                     include 'conexion.php';
 
                     // Realiza una consulta para obtener los tamaños de canchas desde la tabla "detalle_cancha"
-                    $sql = "SELECT DISTINCT Tamaño FROM detalle_cancha"; // Asegúrate de que el nombre de la columna y la tabla coincidan con tu base de datos
+                    $sql = "SELECT DISTINCT Tamaño FROM detalle_cancha"; 
                     
                     $result = $conn->query($sql);
 

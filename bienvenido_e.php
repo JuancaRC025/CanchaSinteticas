@@ -83,7 +83,7 @@ if ($resultado_info) {
 
     <h2>Opciones de Perfil</h2>
     <ul>
-        <li><a href="editar_perfil.html">Editar Perfil</a></li>
+        <li><a href="editar_p_e.php">Editar Perfil</a></li>
         <li><a href="admin_us.php">Administrar Usuarios</a></li>
         <li><a href="cerrar_sesion.php">Cerrar sesión</a></li>
     </ul>

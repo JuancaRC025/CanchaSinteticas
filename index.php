@@ -38,8 +38,9 @@ include 'conexion.php';
         <li class="nav-item"><a href="index.php">Inicio</a></li>
         <li class="nav-item"><a href="canchas.php">Canchas</a></li>
         <li class="nav-item">
-  <a href="https://api.whatsapp.com/send?phone=3027500507&text=Tengo%20problemas%20de%20acceso%20o%20requiero%20información.%20¿Me%20pueden%20ayudar%3F" target="_blank">Soporte</a>
-</li>
+            <a href="https://api.whatsapp.com/send?phone=3027500507&text=Tengo%20problemas%20de%20acceso%20o%20requiero%20información.%20¿Me%20pueden%20ayudar%3F"
+                target="_blank">Soporte</a>
+        </li>
 
         <li class="nav-item dropdown">
             <a href="#">Registrar</a>
@@ -51,12 +52,19 @@ include 'conexion.php';
             </div>
         </li>
         <li class="nav-item"><a href="Ingresar.php">Ingresar</a></li>
-        
-        
+
+
         <li><a href="cerrar_sesion.php" class="cerrar-sesion">
                 <i class="fas fa-sign-out-alt"></i>
             </a>
         </li>
+
+        <li>
+            <a href="perfil.php" class="perfil">
+                <i class="fas fa-user"></i>
+            </a>
+        </li>
+
     </ul>
     <br>
     <br>

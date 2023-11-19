@@ -1,15 +1,17 @@
+
+<!-- ESTO ES CODIGO NUEVOOOOO DE AQUI HACIA ATRAS FUNCIONA SOLO A USUARIO -->
 <?php
 include 'conexion.php';
 session_start(); // Inicia la sesión
 
-// Verificar si la sesión está iniciada
-if (!isset($_SESSION["id_usuario"])) {
+// Verificar si la sesión está iniciada como usuario o empresa
+if (!isset($_SESSION["id_usuario"]) && !isset($_SESSION["id_empresa"])) {
     // No hay sesión iniciada, mostrar mensaje y redirigir al usuario
-    echo "No hay sesión iniciada. Por favor, Ve a Ingresar o registrar.";
-    //header("Location: ingresar.php");
+    echo "No hay sesión iniciada. Por favor, ve a Ingresar o registrar.";
+    // Puedes redirigir al usuario a la página de inicio de sesión, si es necesario
+    // header("Location: ingresar.php");
     exit; // Detener la ejecución del resto del código
 }
-
 
 // Obtener los parámetros de la URL (tipoCancha y fechaSeleccionada)
 $tipoCancha = $_GET['tipoCancha'];
@@ -58,25 +60,24 @@ foreach ($horasDisponibles as $hora) {
             <input type="submit" name="cancelarReserva" value="Cancelar">
         </form>
     </td>';
-       // echo '<td>' . $res['Id_Reserva'] . '</td>';
-
-
-
-        // Agregar un formulario oculto para enviar el Id_Reserva
-
     } else {
         echo '<td>Disponible</td>';
         echo '<td>
         <form method="post" action="procesar_reserva.php">
             <input type="hidden" name="tipoCancha" value="' . $tipoCancha . '">
             <input type="hidden" name="fechaSeleccionada" value="' . $fechaSeleccionada . '">
-            <input type="hidden" name="hora" value="' . $hora . '">
-            <input type="hidden" name="idUsuario" id="idUsuario" value='.$_SESSION["id_usuario"].'>
+            <input type="hidden" name="hora" value="' . $hora . '">';
+            
+        // Verifica si la sesión es de usuario o empresa y establece el campo idUsuario correspondiente
+        if (isset($_SESSION["id_usuario"])) {
+            echo '<input type="hidden" name="idUsuario" value="' . $_SESSION["id_usuario"] . '">';
+        } elseif (isset($_SESSION["id_empresa"])) {
+            echo '<input type="hidden" name="idUsuario" value="' . $_SESSION["id_empresa"] . '">';
+        }
     
-            <input type="submit" name="reservar" value="Reservar">
+        echo '<input type="submit" name="reservar" value="Reservar">
         </form>
-    </td>';
-    
+        </td>';
     }
     echo '</tr>';
 }

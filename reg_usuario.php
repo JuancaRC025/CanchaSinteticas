@@ -47,10 +47,6 @@ include 'conexion.php';
             </div>
         </li>
         <li class="nav-item"><a href="ingresar.php">Ingresar</a></li>
-        <li><a href="cerrar_sesion.php" class="cerrar-sesion">
-                <i class="fas fa-sign-out-alt"></i>
-            </a>
-        </li>
     </ul>
 
 

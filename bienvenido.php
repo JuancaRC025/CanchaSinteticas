@@ -67,8 +67,7 @@ if ($usuario_id) {
 
 <h2>Opciones de Perfil</h2>
 <ul>
-    <li><a href="editar_perfil.html">Editar Perfil</a></li>
-    <li><a href="cambiar_contraseña.html">Cambiar Contraseña</a></li>
+    <li><a href="editar_p_u.php">Editar Perfil</a></li>
     <li><a href="cerrar_sesion.php">Cerrar sesión</a></li>
 </ul>
 
