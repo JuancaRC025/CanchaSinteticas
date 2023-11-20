@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-11-2023 a las 04:20:13
+-- Tiempo de generación: 20-11-2023 a las 03:44:28
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -81,7 +81,7 @@ CREATE TABLE `empresa` (
 --
 
 INSERT INTO `empresa` (`Id_Empresa`, `Nit`, `Razon_Social`, `Direccion`, `Representante_Legal`, `Telefono`, `Correo_Electronico`, `Contraseña`) VALUES
-(1, '1122334455', 'La Pasion del Futbol', 'Cra. 5 #13-54, ', 'Hernan Perez', '3114536712', 'LaPasionFut@gmail.com', 'e10adc3949ba59abbe56e057f20f883e');
+(1, '1122334455', 'La Pasion del Futbol', 'Cra. 5 #13-54, ', 'Hernan Perez', '3124567653', 'LaPasionFut@gmail.com', '123456');
 
 -- --------------------------------------------------------
 
@@ -102,8 +102,7 @@ CREATE TABLE `reserva` (
 --
 
 INSERT INTO `reserva` (`Id_Reserva`, `Id_Usuario`, `Id_Detalle_Cancha`, `Fecha`, `Hora`) VALUES
-(1, 1, 1, '2023-11-07', '16:00:00'),
-(2, 2, 1, '2023-11-07', '19:00:00');
+(2, 2, 1, '2023-11-23', '17:00:00');
 
 -- --------------------------------------------------------
 
@@ -125,8 +124,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`Id_Usuario`, `Nombres`, `Apellidos`, `Correo_Electronico`, `Telefono`, `Contraseña`) VALUES
-(1, 'Andres', 'Vallejo', 'andres123@gmail.com', '3124567653', '827ccb0eea8a706c4c34a16891f84e7b'),
-(2, 'Juan', 'Cordoba', '2.juanca73@gmail.com', '3145494538', '827ccb0eea8a706c4c34a16891f84e7b');
+(1, 'Juan', 'Cordoba', '2.juanca73@gmail.com', '3145494538', '123456'),
+(2, 'Andres', 'Vallejo', 'andres123@gmail.com', '3114536712', '123456');
 
 --
 -- Índices para tablas volcadas

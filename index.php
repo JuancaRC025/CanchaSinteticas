@@ -53,17 +53,18 @@ include 'conexion.php';
         </li>
         <li class="nav-item"><a href="Ingresar.php">Ingresar</a></li>
 
+        <li>
+            <a href="perfil.php" class="perfil">
+                <i class="fas fa-user"></i>
+            </a>
+        </li>
 
         <li><a href="cerrar_sesion.php" class="cerrar-sesion">
                 <i class="fas fa-sign-out-alt"></i>
             </a>
         </li>
 
-        <li>
-            <a href="perfil.php" class="perfil">
-                <i class="fas fa-user"></i>
-            </a>
-        </li>
+       
 
     </ul>
     <br>

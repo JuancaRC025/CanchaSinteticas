@@ -11,6 +11,7 @@ session_start();
     <title>Reservar</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src='main.js'></script>
 </head>
 <style>
@@ -41,16 +42,9 @@ session_start();
             target="_blank">Soporte</a>
         </li>
 
-        <li class="nav-item dropdown">
-            <a href="#">Registrar</a>
-            <div class="dropdown-content">
-                <a href="reg_usuario.php">Usuario</a>
-                <a href="reg_empresa.php">Empresa</a>
-            </div>
-        </li>
-        <li class="nav-item"><a href="ingresar.php">Ingresar</a></li>
-        <li><a href="cerrar_sesion.php" class="cerrar-sesion">
-                <i class="fas fa-sign-out-alt"></i>
+        <li>
+            <a href="perfil.php" class="perfil">
+                <i class="fas fa-user"></i>
             </a>
         </li>
     </ul>

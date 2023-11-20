@@ -8,7 +8,8 @@ $direccion = $_POST['direccion'];
 $representante = $_POST['representante_legal'];
 $telefono = $_POST['telefono'];
 $correo = $_POST['correo_empresa'];
-$contrasena = md5($_POST['contrasena']);
+$contrasena = $_POST['contrasena'];
+//$contrasena = md5($_POST['contrasena']); Cifrado para las contraseñas
 
 
 $sql = "INSERT INTO empresa (Nit,Razon_Social,Direccion,Representante_Legal,Telefono,Correo_Electronico,Contraseña) VALUES ('$nit', '$razon','$direccion','$representante','$telefono','$correo','$contrasena')";

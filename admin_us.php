@@ -15,9 +15,16 @@ if (!$resultado) {
 <head>
     <title>Usuarios</title>
     <link rel="stylesheet" href="css/mod-e.css">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
+
+<ul class="navbar">
+    <li class="nav-item"><a href="bienvenido_e.php"> < Volver </a></li>
+ 
+</ul>
+<br>
     <h1>Lista De Usuarios Registrados</h1>
     <table border="1">
         <tr>
@@ -39,7 +46,6 @@ if (!$resultado) {
         }
         ?>
     </table>
-    <button onclick="regresar()">Regresar</button>
     <script>
         function eliminarUsuario(id) {
             // Aquí puedes agregar lógica para confirmar la eliminación y luego enviar una solicitud al servidor usando AJAX.
@@ -61,9 +67,6 @@ if (!$resultado) {
         window.location.href = 'actualizar_usuario.php?id=' + id;
     }
 
-    function regresar() {
-            window.location.href = 'bienvenido_e.php';
-        }
 
     </script>
 </body>

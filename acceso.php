@@ -31,7 +31,7 @@ if (!empty($_POST)) {
             alert("Ingreso Exitoso, Bienvenido ' . $nombreUsuario . '");
             setTimeout(function() {
                 window.location.href = "bienvenido.php";
-            }, 1000); // Redirigir después de 5 segundos
+            }, 100); // Redirigir después de 5 segundos
         </script>';
     } else {
         echo '<script>

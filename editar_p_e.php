@@ -48,9 +48,10 @@ $direccion_empresa = $fila_info['Direccion'];
 
 <body>
 
-    <ul class="navbar">
-        <!-- ... (Tu código de barra de navegación) ... -->
-    </ul>
+<ul class="navbar">
+    <li class="nav-item"><a href="bienvenido_e.php"> < Volver </a></li>
+ 
+</ul>
 
     <h1>Editar Perfil - Empresa</h1>
 
@@ -58,19 +59,19 @@ $direccion_empresa = $fila_info['Direccion'];
         <input type="hidden" name="id_empresa" value="<?php echo $empresa_id; ?>">
 
         <label>Representante Legal:</label>
-        <input type="text" name="nuevo_representante" value="<?php echo htmlspecialchars($representante_empresa); ?>"><br>
+        <input type="text" name="nuevo_representante" value="<?php echo htmlspecialchars($representante_empresa); ?>" required><br>
 
         <label>Razón Social:</label>
-        <input type="text" name="nueva_razon_social" value="<?php echo htmlspecialchars($nombre_empresa); ?>"><br>
+        <input type="text" name="nueva_razon_social" value="<?php echo htmlspecialchars($nombre_empresa); ?>" required><br>
 
         <label>Telefono:</label>
-        <input type="text" name="nuevo_telefono" value="<?php echo htmlspecialchars($telefono_empresa); ?>"><br>
+        <input type="text" name="nuevo_telefono" value="<?php echo htmlspecialchars($telefono_empresa); ?>" required><br>
 
         <label>Correo Electrónico:</label>
-        <input type="text" name="nuevo_correo" value="<?php echo htmlspecialchars($correo_empresa); ?>"><br>
+        <input type="text" name="nuevo_correo" value="<?php echo htmlspecialchars($correo_empresa); ?>" required><br>
 
         <label>Direccion:</label>
-        <input type="text" name="nueva_direccion" value="<?php echo htmlspecialchars($direccion_empresa); ?>"><br>
+        <input type="text" name="nueva_direccion" value="<?php echo htmlspecialchars($direccion_empresa); ?>" required><br>
 
         <label>Nueva Contraseña:</label>
         <input type="password" name="nueva_contraseña" placeholder="Deja en blanco para no cambiar"><br>

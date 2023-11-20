@@ -40,7 +40,7 @@ if ($resultado_info) {
     <meta charset="utf-8">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <style>
@@ -56,37 +56,52 @@ if ($resultado_info) {
         <li class="nav-item"><a href="index.php">Inicio</a></li>
         <li class="nav-item"><a href="canchas.php">Canchas</a></li>
         <li class="nav-item">
-  <a href="https://api.whatsapp.com/send?phone=3027500507&text=Tengo%20problemas%20de%20acceso%20o%20requiero%20información.%20¿Me%20pueden%20ayudar%3F" target="_blank">Soporte</a>
-</li>
 
-        <li class="nav-item dropdown">
-            <a href="#">Registrar</a>
-            <div class="dropdown-content">
-                <a href="reg_usuario.php">Usuario</a>
-                <a href="reg_empresa.php">Empresa</a>
-            </div>
-        </li>
-        <li class="nav-item"><a href="Ingresar.php">Ingresar</a></li>
+    
 
         <li><a href="cerrar_sesion.php" class="cerrar-sesion">
                 <i class="fas fa-sign-out-alt"></i>
             </a>
         </li>
     </ul>
-    <h1>¡Bienvenido, Administrador!</h1>
+    <table>
+    <tr>
+        <td colspan="2"><h1>¡Bienvenido, Administrador!</h1></td>
+    </tr>
+    <tr>
+        <td>Representante:</td>
+        <td><?php echo $representa_empresa; ?></td>
+    </tr>
+    <tr>
+        <td>Nombre de la empresa:</td>
+        <td><?php echo $nombre_empresa; ?></td>
+    </tr>
+    <tr>
+        <td>Telefono:</td>
+        <td><?php echo $Telefono_empresa; ?></td>
+    </tr>
+    <tr>
+        <td>Correo Electrónico:</td>
+        <td><?php echo $correo_empresa; ?></td>
+    </tr>
+    <tr>
+        <td>Direccion:</td>
+        <td><?php echo $Direccion_empresa; ?></td>
+    </tr>
+    <tr>
+        <td colspan="2"><h2>Opciones de Perfil</h2></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <ul>
+                <li><a href="editar_p_e.php">Editar Perfil</a></li>
+                <li><a href="admin_us.php">Administrar Usuarios</a></li>
+                <li><a href="cerrar_sesion.php">Cerrar sesión</a></li>
+            </ul>
+        </td>
+    </tr>
+</table>
 
-    <p>Representante: <?php echo $representa_empresa; ?></p>
-    <p>Nombre de la empresa: <?php echo $nombre_empresa; ?></p>
-    <p>Telefono: <?php echo $Telefono_empresa; ?></p>
-    <p>Correo Electrónico: <?php echo $correo_empresa; ?></p>
-    <p>Direccion: <?php echo $Direccion_empresa; ?></p>
-
-    <h2>Opciones de Perfil</h2>
-    <ul>
-        <li><a href="editar_p_e.php">Editar Perfil</a></li>
-        <li><a href="admin_us.php">Administrar Usuarios</a></li>
-        <li><a href="cerrar_sesion.php">Cerrar sesión</a></li>
-    </ul>
 </body>
 
 </html>

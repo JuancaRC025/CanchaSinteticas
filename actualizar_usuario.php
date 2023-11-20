@@ -57,6 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['guardar_actualizacion
 <html>
 <head>
 <link rel="stylesheet" href="css/main.css">
+<link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
     <title>Actualizar Usuario</title>
 </head>
 <style> 
@@ -65,6 +66,11 @@ body{
 }
 </style>
 <body>
+
+<ul class="navbar">
+    <li class="nav-item"><a href="admin_us.php"> < Volver </a></li>
+ 
+</ul>
    
     <h2>Actualizar Usuario</h2>
     <form method="post" action="actualizar_usuario.php">

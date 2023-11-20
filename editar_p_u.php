@@ -44,6 +44,7 @@ if ($stmt) {
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <style>
         body {
             background-image: url('./img/fondo.avif');
@@ -70,16 +71,16 @@ if ($stmt) {
     <input type="hidden" name="id_usuario" value="<?php echo $usuario_id; ?>">
 
     <label>Nombres:</label>
-    <input type="text" name="nuevos_nombres" value="<?php echo htmlspecialchars($nombres); ?>"><br>
+    <input type="text" name="nuevos_nombres" value="<?php echo htmlspecialchars($nombres); ?>" required><br>
 
     <label>Apellidos:</label>
-    <input type="text" name="nuevos_apellidos" value="<?php echo htmlspecialchars($apellidos); ?>"><br>
+    <input type="text" name="nuevos_apellidos" value="<?php echo htmlspecialchars($apellidos); ?>" required><br>
 
     <label>Correo Electrónico:</label>
-    <input type="text" name="nuevo_correo" value="<?php echo htmlspecialchars($correo_electronico); ?>"><br>
+    <input type="text" name="nuevo_correo" value="<?php echo htmlspecialchars($correo_electronico); ?>" required><br>
 
     <label>Teléfono:</label>
-    <input type="text" name="nuevo_telefono" value="<?php echo htmlspecialchars($telefono); ?>"><br>
+    <input type="text" name="nuevo_telefono" value="<?php echo htmlspecialchars($telefono); ?>" required><br>
 
     <label>Nueva Contraseña:</label>
     <input type="password" name="nueva_contraseña" placeholder="Deja en blanco para no cambiar"><br>

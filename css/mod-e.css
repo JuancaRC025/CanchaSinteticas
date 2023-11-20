@@ -1,18 +1,18 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url(../img/mod.jpg);
+    background-image: url(../img/23.jpg);
 }
 
 h1 {
     text-align: center;
-    color: white;
+    color: rgb(255, 253, 253);
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     text-align: center;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 table th, table td {
@@ -26,7 +26,7 @@ table th {
 
 .button_onclick {
     display: inline-block;
-    background-color: #ff0000;
+    background-color: #41b502;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
@@ -36,7 +36,7 @@ table th {
 
 .button {
     display: inline-block;
-    background-color: #4CAF50;
+    background-color: #311192;
     color: white;
     padding: 10px 20px;
     text-decoration: none;

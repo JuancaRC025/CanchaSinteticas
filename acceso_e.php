@@ -32,7 +32,7 @@ if (!empty($_POST)) {
         alert("Ingreso Exitoso como Empresa: ' . $nombre_empresa . '   Bienvenido: '.$representa_empresa.'");
     setTimeout(function() {
         window.location.href = "bienvenido_e.php";
-    }, 1000); // Redirigir después de 1 segundo
+    }, 100); // Redirigir después de 1 segundo
 </script>';
     } else {
         echo '<script>

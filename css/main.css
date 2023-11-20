@@ -402,7 +402,8 @@ table {
 }
 
 table, th, td {
-    border: 1px solid #ccc; /* Borde de las celdas y la tabla */
+    border: 1px solid #000000; /* Borde de las celdas y la tabla */
+    border-block-color: black;
 }
 
 th, td {
@@ -412,7 +413,7 @@ th, td {
 
 /* Estilos para los botones */
 button {
-    background-color: #0074d9;
+    background-color: #27b005;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -514,7 +515,7 @@ button:hover {
 .cerrar-sesion i {
     margin-right: 5px; /* Ajusta el espacio entre el ícono y el texto si es necesario */
     /* Puedes ajustar la posición vertical del ícono según tus necesidades */
-    margin-top: 10px; /* Ajusta la posición vertical del ícono */
+    margin-top: 20px !important; /* Ajusta la posición vertical del ícono */
 }
 
 /* Estilo para el enlace del perfil */
@@ -525,14 +526,14 @@ button:hover {
     display: flex; /* Utiliza flexbox para centrar verticalmente */
     align-items: center; /* Centra verticalmente el contenido del enlace */
     float: right; /* Coloca el elemento a la derecha */
-    margin-right: 60px !important; /* Ajusta el espacio desde el borde derecho */
+    margin-right: 30px !important; /* Ajusta el espacio desde el borde derecho */
 }
 
 /* Estilo para el ícono dentro del enlace */
 .perfil i {
-    margin-right: 5px; /* Ajusta el espacio entre el ícono y el texto si es necesario */
+    margin-right: 0px !important; /* Ajusta el espacio entre el ícono y el texto si es necesario */
     /* Puedes ajustar la posición vertical del ícono según tus necesidades */
-    margin-top: 10px; /* Ajusta la posición vertical del ícono */
+    margin-top: 20px !important ; /* Ajusta la posición vertical del ícono */
 }
 
 /* ----------------------Metodos de pago------------------------------ */
@@ -556,7 +557,6 @@ button:hover {
     height: 150px; /* Mantiene la proporción de aspecto original */
     margin-right: 1px; /* Espaciado a la derecha de cada imagen */
 }
-
 
 
 

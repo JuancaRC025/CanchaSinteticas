@@ -7,8 +7,6 @@ $sql = "SELECT * FROM empresa"; // Asegúrate de que el nombre de la tabla coinc
 
 $result = $conn->query($sql);
 
-
-
 ?>
 
 <!DOCTYPE html>
