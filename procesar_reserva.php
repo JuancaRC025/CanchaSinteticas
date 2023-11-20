@@ -52,27 +52,32 @@ $fechaSeleccionada = $conn->real_escape_string($_POST['fechaSeleccionada']);
 $hora = $conn->real_escape_string($_POST['hora']);
 $idUsuario = $conn->real_escape_string($_POST['idUsuario']);
 
-// Verifica si el Id_Usuario es válido antes de realizar la inserción
-if (esUsuarioValido($conn, $idUsuario)) {
-    // Obtén el nombre del usuario
-    $nombreUsuario = obtenerNombreUsuario($conn, $idUsuario);
+// Realiza la inserción de la reserva en la base de datos, incluyendo el Id_Usuario
+$sql = "INSERT INTO reserva (Id_Usuario, Id_Detalle_Cancha, Fecha, Hora) 
+        SELECT '$idUsuario', Id_Detalle_Cancha, '$fechaSeleccionada', '$hora' FROM detalle_cancha WHERE Tamaño = '$tipoCancha'";
 
-    // Realiza la inserción de la reserva en la base de datos, incluyendo el Id_Usuario
-    $sql = "INSERT INTO reserva (Id_Usuario, Id_Detalle_Cancha, Fecha, Hora) 
-            VALUES ('$idUsuario', (SELECT Id_Detalle_Cancha FROM detalle_cancha WHERE Tamaño = '$tipoCancha'), '$fechaSeleccionada', '$hora')";
-
-    if ($conn->query($sql) === TRUE) {
-        // Éxito en la inserción, muestra la ventana emergente con JavaScript
+if ($conn->query($sql) === TRUE) {
+    // Éxito en la inserción, muestra la ventana emergente con JavaScript
+    echo '<script>
+    alert("Reserva realizada con éxito.\n\nNombre del Usuario: ' . $nombreUsuario . '\nFecha Seleccionada: ' . $fechaSeleccionada . '\nHora: ' . $hora . '");
+    setTimeout(function(){
+        window.location.href = "reservar.php"; // Redirige después de 5 segundos
+    }, 5000); // 5000 milisegundos = 5 segundos
+</script>';
+} else {
+    // Error al realizar la reserva
+    if ($conn->errno == 1048) {
+        // Verifica si el error es relacionado con el valor nulo
         echo '<script>
-        alert("Reserva realizada con éxito.\n\nNombre del Usuario: ' . $nombreUsuario . '\nFecha Seleccionada: ' . $fechaSeleccionada . '\nHora: ' . $hora . '");
-        window.location.href = "reservar.php"; // Redirige inmediatamente
-      </script>';
+            alert("No se puede realizar la reserva. El valor de Id_Detalle_Cancha es nulo.");
+            window.location.href = "reservar.php"; // Redirige inmediatamente
+        </script>';
     } else {
+        // Otro tipo de error
         echo "Error al realizar la reserva: " . $conn->error;
     }
-} else {
-    echo "El usuario no es válido. Por favor, proporcione un Id_Usuario válido.";
 }
+
 
 
 // Consulta para obtener las reservas del usuario actual

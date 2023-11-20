@@ -88,8 +88,9 @@ if (isset($_SESSION['id_usuario']) || isset($_SESSION['id_empresa'])) {
                         <input required type="password" placeholder="Contraseña" name="Contraseña_i"
                             id="password-input">
                         <br>
+                        <br>
                         <span id="toggle-password" class="password-icon" onclick="togglePassword()">
-                            <br>
+
                             <i class="fas fa-eye-slash"></i>
                         </span>
                     </div>
@@ -108,6 +109,7 @@ if (isset($_SESSION['id_usuario']) || isset($_SESSION['id_empresa'])) {
                             }
                         }
                     </script>
+
 
                     <button>Entrar</button>
                 </form>
@@ -121,30 +123,10 @@ if (isset($_SESSION['id_usuario']) || isset($_SESSION['id_empresa'])) {
                     <div style="position: relative;">
                         <input required type="password" placeholder="Contraseña" name="Contraseña_i"
                             id="password-input">
-                        <br>
-                        <span id="toggle-password" class="password-icon" onclick="togglePassword()">
-                            <br>
-                            <i class="fas fa-eye-slash"></i>
-                        </span>
+                            
                     </div>
                     <button>Entrar</button>
 
-
-
-                    <script>
-                        function togglePassword() {
-                            var passwordInput = document.getElementById("password-input");
-                            var toggleIcon = document.getElementById("toggle-password");
-
-                            if (passwordInput.type === "password") {
-                                passwordInput.type = "text";
-                                toggleIcon.innerHTML = '<i class="fas fa-eye"></i>';
-                            } else {
-                                passwordInput.type = "password";
-                                toggleIcon.innerHTML = '<i class="fas fa-eye-slash"></i>';
-                            }
-                        }
-                    </script>
 
                 </form>
             </div>
